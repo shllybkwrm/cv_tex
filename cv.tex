@@ -1,0 +1,152 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Shelly \textsc{Bagchi}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Information}
+
+\begin{tabular}{rl}
+    \textsc{Address:}   & 860 Peachtree St NE \#1002, Atlanta, GA 30308 \\
+    \textsc{Phone:}     & +1 703 994 7424\\
+    \textsc{email:}     & \href{mailto:shelly.bagchi@gmail.com}{shelly.bagchi@gmail.com}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \emph{2013 - Present} & Doctor of Philosophy in \textsc{Robotics}\\
+& \textbf{Georgia Institute of Technology}, Atlanta, GA\\
+%& \normalsize \textsc{Gpa}: \textsc{n/a}\\
+&\\
+\textsc{May 2013} & Bachelor of Science in \textsc{Computer Engineering} \\
+& \small Minors in \textsc{Computer Science, Japanese Language \& Literature} \\
+& \emph{cum laude}, \normalsize\textbf{George Washington University}, Washington, D.C.\\
+& \normalsize \textsc{Gpa}: 3.58/4.0\\&\\
+\end{tabular}
+
+%Section: Work Experience
+\section{Experience}
+\begin{tabular}{r p{11cm}}
+ \textsc{Jan 2012 -} & Senior Design Project: \textsc{Android-Controlled Car for Remote Mapping} \\
+ \textsc{- May 2013} &\footnotesize{Designed and built a small robotic car controlled by an Arduino microcontroller.  Integrated a Bluetooth receiver for wireless serial communication with an Android smartphone.  Interfaced wheel encoders to calculate the car's odometry for localization purposes.  Mounted an ultrasonic sensor and servo motor on the car, and transmitted obstacle coordinates to the phone to be plotted on a map.} \\
+&\\
+ \textsc{Sept - Dec 2012} & NSF REU Participant, \textsc{High Performance Computing Group}, \textsc{GWU} \\
+ &\footnotesize{Used parallel programming to interface sequence alignment algorithms for use on Graphical Processing Units.} \\
+&\\
+ \textsc{Summer 2012} & Undergraduate Research Participant at \textsc{NIST}, Gaithersburg, MD \\
+ &\emph{Applied Electrical Metrology Group}\\
+ &\footnotesize{Developed a LabVIEW program to assist in early detection of power grid issues.  Analyzed data received from Phasor Measurement Units and determined their latency.} \\
+&\\
+ \textsc{Sept 2011 -} &  Microcontroller Team Member, \textsc{Robotic Perception Group}, \textsc{GWU} \\
+\textsc{- May 2012} &\emph{Ninja Car Project}\\
+ &\footnotesize{Programmed the microcontroller for an RC car with the ability to perform acrobatic feats.  Set up an interface between the remote control and the car's hardware to control the car's ability to jump into the air.  Integrated potentiometers and encoders onto the car and developed PID feedback for drive control.  Assisted with the design of a microcontroller PCB to perform these functions.} \\
+&\\
+ \textsc{Summer 2011} & Undergraduate Research Participant at \textsc{NIST}, Gaithersburg, MD \\
+ &\emph{Transformative Applications Project}\\
+ &\footnotesize{Tested Android applications developed to aid soldiers in Afghanistan.  Discovered bugs and other issues in the applications, and reported them to the software developers.  Suggested enhancements that were later implemented into the application.} \\
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Awards, Memberships, \& Offices}
+\begin{tabular}{rl}
+ 2014 & NSF EAPSI Japan Fellow \\
+ 2013 & President's Fellowship, Georgia Institute of Technology \\
+ 2012 & Karlgaard Scholar in Computer Engineering \\
+ 2012 & President, Tau Beta Pi DC Gamma Chapter \\
+ 2011 & Vice President, Tau Beta Pi DC Gamma Chapter \\
+ 2011 & Executive Board Member, GW Tech Collective \\
+\end{tabular}
+
+%Section: Skills
+\section{Skills}
+\begin{tabular}{r p{11cm}}
+ Basic Knowledge: & \small Java, \textsc{php}, my\textsc{sql}, \textsc{html}, css, Access, \fb\LaTeX \\
+Intermediate Knowledge: & \small \textsc{Linux}, \textsc{C}, Python, \textsc{matlab}, Lab\textsc{view}, Arduino, Excel, Word, PowerPoint \\
+\end{tabular}
+
+%Section: Languages
+\section{Languages}
+\begin{tabular}{rl}
+ \textsc{English}&Native Speaker\\
+\textsc{Japanese}&Intermediate\\
+\textsc{Bengali}&Comprehension\\
+\end{tabular}
+
+%Section: Interests
+%\section{Interests and Activities}
+%Technology, Open-Source, Programming\\
+%aradoxes in Decision Making, Psychoanalysis, Behavioural Finance\\
+%Football, Travelling
+
+
+\end{document}
